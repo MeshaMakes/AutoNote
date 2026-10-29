@@ -1,0 +1,21 @@
+{
+  "name": "autonote",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "typecheck": "bun check"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "oxfmt": "^0.75.0",
+    "oxlint": "^1.90.0"
+  },
+  "peerDependencies": {
+    "typescript": "^7"
+  },
+  "dependencies": {
+    "@clack/prompts": "^1.8.1",
+    "chalk": "^6.0.1"
+  }
+}

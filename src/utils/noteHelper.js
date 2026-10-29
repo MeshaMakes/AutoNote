@@ -3,7 +3,7 @@ import { file, write } from "bun";
 import { getPendingNotes } from "./cacheHelpers";
 
 const filePath = "TempNoteHolder.md";
-const localNotes = new Database("note-cache.sqlite");
+const localNotes = new Database(`${import.meta.dir}/../../note-cache.sqlite`);
 
 const headerMapping = {
   "chore:": "# Chores",
@@ -35,6 +35,7 @@ const noteHelper = async () => {
   const content = await file(filePath).text();
   const lines = content.split(/\r?\n/);
   const pendingNotes = getPendingNotes();
+  console.log({ pendingNotes })
 
   pendingNotes.map((note) => {
     addTextToSection(note, lines);

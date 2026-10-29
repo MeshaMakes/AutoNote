@@ -1,6 +1,6 @@
 import { Database } from "bun:sqlite";
 
-const localNotes = new Database("note-cache.sqlite");
+const localNotes = new Database(`${import.meta.dir}/../../note-cache.sqlite`);
 
 export const listNotes = () => {
   return localNotes.query("SELECT * FROM notes").all();
